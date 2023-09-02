@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>sanchos snake</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">sanchos snake</div>
+        <div id="description">welcome to sanchos snake this wery interesting game!</div>
+        <div id="game-container">
+            <canvas  id="gameCanvas" width="400" height="400" ></canvas>
+        </div>
+    </div>
+    <script>
+        // JavaScript код для игры в змейку
+
+        // Инициализация игрового холста
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Инициализация параметров игры
+        const gridSize = 20;
+        let snake = [{ x: 5, y: 5 }];
+        let food = { x: 10, y: 10 };
+        let direction = 'right';
+
+        // Функция отрисовки змейки
+        function drawSnake() {
+            ctx.fillStyle = '#00f';
+            for (let i = 0; i < snake.length; i++) {
+                ctx.fillRect(snake[i].x * gridSize, snake[i].y * gridSize, gridSize, gridSize);
+            }
+        }
+
+        // Функция отрисовки еды
+        function drawFood() {
+            ctx.fillStyle = '#f00';
+            ctx.fillRect(food.x * gridSize, food.y * gridSize, gridSize, gridSize);
+        }
+
+        // Функция обновления игры
+        function update() {
+            // Обновление положения змейки в зависимости от направления
+            let headX = snake[0].x;
+            let headY = snake[0].y;
+
+            if (direction === 'right') headX++;
+            if (direction === 'left') headX--;
+            if (direction === 'up') headY--;
+            if (direction === 'down') headY++;
+
+            // Проверка на столкновение с едой
+            if (headX === food.x && headY === food.y) {
+                snake.unshift({ x: headX, y: headY });
+                food.x = Math.floor(Math.random() * (canvas.width / gridSize));
+                food.y = Math.floor(Math.random() * (canvas.height / gridSize));
+            } else {
+                snake.pop();
+                snake.unshift({ x: headX, y: headY });
+            }
+
+            // Проверка на столкновение со стеной
+            if (
+                headX < 0 || headY < 0 || headX >= canvas.width / gridSize || headY >= canvas.height / gridSize ||
+                snake.slice(1).some(segment => segment.x === headX && segment.y === headY)
+            ) {
+                clearInterval(gameLoop);
+                function rel_st() {
+                location.reload();
+                }
+                setTimeout(rel_st, 2000);
+            }
+
+            // Очистка холста и перерисовка
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawSnake();
+            drawFood();
+        }
+
+        // Управление змейкой с клавиатуры
+        document.addEventListener('keydown', event => {
+            if (event.key === 'ArrowRight' && direction !== 'd') direction = 'right';
+            if (event.key === 'ArrowLeft' && direction !== 'a') direction = 'left';
+            if (event.key === 'ArrowUp' && direction !== 'w') direction = 'up';
+            if (event.key === 'ArrowDown' && direction !== 's') direction = 'down';
+        });
+
+        // Начало игры
+        const gameLoop = setInterval(update, 100);
+    </script>
+</body>
+</html>
