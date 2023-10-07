@@ -1,97 +1,129 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>sanchos snake</title>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="ARevers111, SANCHOS, fxfd24">
+    <meta name="generator" content="ARevik 2.2">
+    <title>Twitch Translator</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/product/">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="product.css">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      body{
+        background-color: #9932aa;
+      }
+      #aaa { z-index: 999; }
+      #fff { z-index: 1; }
+      #ggg { z-index: 1; }
+
     </style>
-</head>
-<body>
-    <div id="container">
-        <div id="header">sanchos snake</div>
-        <div id="description">welcome to sanchos snake this wery interesting game!</div>
-        <div id="game-container">
-            <canvas  id="gameCanvas" width="400" height="400" ></canvas>
-        </div>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="product.css" rel="stylesheet">
+  </head>
+  <body>
+
+<main>
+  
+  <div style="background-color: white; border-radius: 50px;" class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
+    <div style="background: linear-gradient(#a45ee9, #b47ee5, #bf92e4, #b47ee5, #a45ee9); border-radius: 50px;" class="col-md-5 p-lg-5 mx-auto my-5" id = "aaa">
+      <h1 class="display-4 fw-normal">Twitch Translator</h1>
+      <p class="lead fw-normal">Лучший сервис для перевода стримов на платформе Twitch в реальном времени!</p>
     </div>
-    <script>
-        // JavaScript код для игры в змейку
+  </div>
 
-        // Инициализация игрового холста
-        const canvas = document.getElementById('gameCanvas');
-        const ctx = canvas.getContext('2d');
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div style="border-radius: 50px;" class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-5">Почему именно мы?</h2>
+        <p class="lead">✔ Наш сервис является единственным в мире для перевода стримов на Twich в реальном времени.</p>
+        <p class="lead">✔ Наша команда несколько лет изучала и дорабатывала алгоритмы перевода стримов и мы добились идеального результата.</p>
 
-        // Инициализация параметров игры
-        const gridSize = 20;
-        let snake = [{ x: 5, y: 5 }];
-        let food = { x: 10, y: 10 };
-        let direction = 'right';
+      </div>
+    </div>
+    <div style="border-radius: 50px;" class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <h2 class="display-5">Как работает наш алгоритм?</h2>
+        <p class="lead">• Получение аудиопотока из браузера.</p>
+        <p class="lead">• Сохранение небольших отрезков записи.</p>
+        <p class="lead">• Преобразование звука в речь.</p>
+        <p class="lead">• перевод речи.</p>
+        <p class="lead">• озвучивание переведенной речи на вашем языке.</p>
+      </div>
+    </div>
+  </div>
 
-        // Функция отрисовки змейки
-        function drawSnake() {
-            ctx.fillStyle = '#00f';
-            for (let i = 0; i < snake.length; i++) {
-                ctx.fillRect(snake[i].x * gridSize, snake[i].y * gridSize, gridSize, gridSize);
-            }
-        }
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div style="border-radius: 50px;" class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <h2 class="display-5">связь с нами</h2>
+        <p class="lead">Если вы хотите задать вопрос по проекту или ва разработчик на pyhton, то мы с радостью встретим вас на нашем discord сервере.</p>
+        <p>ㅤ</p>
+        <a href="https://discord.gg/7QCthyhHTT" class="btn11">перейти на сервер</a>
+        
+      </div>
+    </div>
+    <div style="border-radius: 50px;" class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-5">Установка</h2>
+        <p class="lead">1. Загрузите файл по кнопке ниже.</p>
+        <p class="lead">2. Откройте его и нажмите "установить"</p>
+        <p class="lead">3. Наслаждайтесь просмотром иностранных стримеров на вашем языке</p>
+        <a href="#" class="custom-btn btn-6" >скачать</a>
+ </body>
+</html>
 
-        // Функция отрисовки еды
-        function drawFood() {
-            ctx.fillStyle = '#f00';
-            ctx.fillRect(food.x * gridSize, food.y * gridSize, gridSize, gridSize);
-        }
 
-        // Функция обновления игры
-        function update() {
-            // Обновление положения змейки в зависимости от направления
-            let headX = snake[0].x;
-            let headY = snake[0].y;
+      </div>
+    </div>
+  </div>
 
-            if (direction === 'right') headX++;
-            if (direction === 'left') headX--;
-            if (direction === 'up') headY--;
-            if (direction === 'down') headY++;
+</main>
 
-            // Проверка на столкновение с едой
-            if (headX === food.x && headY === food.y) {
-                snake.unshift({ x: headX, y: headY });
-                food.x = Math.floor(Math.random() * (canvas.width / gridSize));
-                food.y = Math.floor(Math.random() * (canvas.height / gridSize));
-            } else {
-                snake.pop();
-                snake.unshift({ x: headX, y: headY });
-            }
+        <p>ㅤ</p>
+        <p>ㅤ</p>
+        <p>ㅤ</p>
+<!-- FOOTER -->
+  <footer class="footer">
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div>
+    <ul class="menu">
+      <li class="menu__item"><a class="menu__link" href="#">О нас</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Команда</a></li>
 
-            // Проверка на столкновение со стеной
-            if (
-                headX < 0 || headY < 0 || headX >= canvas.width / gridSize || headY >= canvas.height / gridSize ||
-                snake.slice(1).some(segment => segment.x === headX && segment.y === headY)
-            ) {
-                clearInterval(gameLoop);
-                function rel_st() {
-                location.reload();
-                }
-                setTimeout(rel_st, 2000);
-            }
+    </ul>
+    <p>&copy;2023 Sanchos™ | With love</p>
+  </footer>
 
-            // Очистка холста и перерисовка
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            drawSnake();
-            drawFood();
-        }
 
-        // Управление змейкой с клавиатуры
-        document.addEventListener('keydown', event => {
-            if (event.key === 'ArrowRight' && direction !== 'd') direction = 'right';
-            if (event.key === 'ArrowLeft' && direction !== 'a') direction = 'left';
-            if (event.key === 'ArrowUp' && direction !== 'w') direction = 'up';
-            if (event.key === 'ArrowDown' && direction !== 's') direction = 'down';
-        });
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
-        // Начало игры
-        const gameLoop = setInterval(update, 100);
-    </script>
-</body>
+      
+  </body>
 </html>
